@@ -37,9 +37,8 @@ while getopts ":hi:o:" opt; do
   esac
 done
 
-SAMTOOLS_BASE="/samtools-0.1.19"
 fbname=$(basename $input_file .sam)
-${SAMTOOLS_BASE}/samtools-0.1.19 view -bS $input_file > $fbname.bam
-${SAMTOOLS_BASE}/samtools-0.1.19 sort -m 2000000000 $fbname.bam $output_file
-${SAMTOOLS_BASE}/samtools-0.1.19 index $output_file.bam
+samtools view -bS $input_file > $fbname.bam
+samtools sort -m 2000000000 $fbname.bam $output_file
+samtools index $output_file.bam
 rm $fbname.bam
