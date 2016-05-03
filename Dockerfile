@@ -1,5 +1,6 @@
 FROM ubuntu:14.04.3
-MAINTAINER Upendra Devisetty
+MAINTAINER Upendra Devisetty <upendra@cyverse.org>
+LABEL Descritpion "This tool accepts a bam file and returns a sorted bam file"
 
 RUN apt-get update && apt-get install -y wget samtools git
 
