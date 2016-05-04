@@ -41,4 +41,5 @@ fbname=$(basename $input_file .sam)
 samtools view -bS $input_file > $fbname.bam
 samtools sort -m 2000000000 $fbname.bam $output_file
 samtools index $output_file.bam
+mv $output_file."bam" $output_file
 rm $fbname.bam
